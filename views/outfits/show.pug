@@ -1,0 +1,21 @@
+extends ../layouts/main.pug
+block content
+  .container
+    header
+      h1= outfit.name
+
+
+    div(style='padding-top: 10px') Name: 
+      = outfit.name || "Your outfit is loading..."
+
+    div(style='padding-top: 10px') Top:  
+      = outfit.top || "Your top is loading..."
+
+    div(style='padding-top: 10px') Bottom:  
+      = outfit.bottom || "Your bottom is loading..."
+
+    div(style='padding-top: 10px') Shoes:  
+      = outfit.shoes || "Your shoes is loading..."
+
+    div(style='padding-top: 10px')
+      a.btn.btn-light(href='/outfits', type='button') Back to Index

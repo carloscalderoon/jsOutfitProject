@@ -1,0 +1,32 @@
+
+form(action=(outfit ? "/outfits/update" : "/outfits"), method="POST")
+  if outfit
+    input(type="hidden", name="id", value=outfit.id)
+
+  .form-group
+    label Name
+    input.form-control(name="outfit[name]", required, value=(outfit ? outfit.name : null))
+
+  .form-group
+  label Top
+  select.form-control(name="outfit[top]", required)
+    each top in ['T-Shirt', 'Hoodie', 'Jacket', 'Shirt']
+      option(value=top, selected=(outfit && outfit.top === top))
+        = top.toLowerCase()
+
+  .form-group
+  label Bottom
+  select.form-control(name="outfit[bottom]", required)
+    each bottom in ['Jean', 'Pants', 'Jogger', 'Shorts']
+      option(value=bottom, selected=(outfit && outfit.bottom === bottom))
+        = bottom.toLowerCase()
+  
+  .form-group
+  label Shoes
+  select.form-control(name="outfit[shoes]", required)
+    each shoes in ['Sneakers', 'Shoes', 'Sandals']
+      option(value=shoes, selected=(outfit && outfit.shoes === shoes))
+        = shoes.toLowerCase()
+  
+  .form-group
+    button.btn.btn-dark(type="submit") Submit

@@ -1,0 +1,15 @@
+extends ../layouts/main.pug
+
+block globals
+block content
+  .container
+    header
+      h1= `Edit ${outfit.name}`
+    
+block content
+  .container
+    header
+      h1 Edit Outfits
+
+    div
+      include ./form.pug

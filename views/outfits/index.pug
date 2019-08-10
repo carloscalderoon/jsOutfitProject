@@ -1,0 +1,27 @@
+extends ../layouts/main.pug
+block globals
+  - title = "Outfits"
+
+block content
+  .container
+    header
+      h1= title
+
+    div
+      table.table.table-striped
+        thead
+          tr
+            th Name
+            th Actions
+        
+        tbody
+          each outfit in outfits
+            tr
+              td
+                a(href=`/outfits/${outfit.id}`)= outfit.name
+              td
+                a(href=`/outfits/${outfit.id}/edit`) Edit
+                = " | "
+                form.destroy(action="/outfits/destroy", method="POST", onsubmit='return confirm("Last chance to regret");')
+                  input(type="hidden", name="id", value=outfit.id)
+                  input(type="submit", value="delete")
