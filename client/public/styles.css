@@ -89,11 +89,38 @@ body,
   padding: .5rem 0.5rem;
 }
 
-@media (min-width: 992px) .nav-destroy>input[type="submit"] {
+/* @media (min-width: 992px) .nav-destroy>input[type="submit"] {
   padding-right: .5rem;
   padding-left: .5rem;
-}
+} */
 
 .nav-destroy:hover>input[type="submit"] {
   color: rgba(0, 0, 0, .7);
+}
+
+.outfitsLabels {
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 5%;
+}
+
+.outfitShowBg{
+  background-image: url(./images/showBg.jpg);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.showContainerFixed{
+  margin-top: 10px;
+}
+
+.shirtImage{
+  height: 50px;
+  width: 50px;
+  background-image: url(./images/shirt.png);
+  background-size: cover;
 }
